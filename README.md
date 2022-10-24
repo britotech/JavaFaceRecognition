@@ -18,7 +18,7 @@ realizando o cadastro de faces, e também o reconhecimento delas.
 </div>  
 
 
-Para o registro é necessário inserir um nome e após a face ser reconhecida realizar a captura de 25 fotos, basta manter o o botão capturar.
+Para o registro é necessário inserir um nome e após a face ser reconhecida realizar a captura de 25 fotos, basta manter pressionado o botão capturar.
 <div align="center">
   <img src="https://user-images.githubusercontent.com/30123041/197623837-b3eea08a-996c-49e3-a7c2-a4d16f80631e.png"/>
 </div>  
