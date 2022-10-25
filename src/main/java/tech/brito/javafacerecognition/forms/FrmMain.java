@@ -40,7 +40,9 @@ public class FrmMain extends javax.swing.JFrame {
     }
 
     private void exibirFormCaptura() {
-        new FrmCaptura(this, true).setVisible(true);
+        var captura = new FrmCaptura(this, true);
+        captura.setVisible(true);
+
         setForm(dashboard);
     }
 

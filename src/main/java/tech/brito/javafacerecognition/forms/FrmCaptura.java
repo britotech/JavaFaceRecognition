@@ -1,7 +1,7 @@
 package tech.brito.javafacerecognition.forms;
 
-import java.awt.Color;
 import tech.brito.javafacerecognition.core.CameraRegistro;
+import tech.brito.javafacerecognition.core.Utils;
 
 public class FrmCaptura extends javax.swing.JDialog {
 
@@ -9,8 +9,7 @@ public class FrmCaptura extends javax.swing.JDialog {
 
     public FrmCaptura(java.awt.Frame parent, boolean modal) {
         initComponents();
-        var diretorioArquivos = new java.io.File("").getAbsolutePath() + "\\src\\main\\resources\\imagens";
-        camera = new CameraRegistro(lblRegisterCam, diretorioArquivos, this, btnRegister, txfName, counterLabel);
+        camera = new CameraRegistro(lblRegisterCam, Utils.getDiretorioImagens(), this, btnRegister, txfName, counterLabel);
         camera.startCamera();
     }
 
@@ -146,14 +145,20 @@ public class FrmCaptura extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        camera.stopCamera();
-        dispose();
+        pararCamera();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        camera.stopCamera();
-        dispose();
+        pararCamera();
     }//GEN-LAST:event_formWindowClosing
+
+    public void pararCamera() {
+        try {
+            camera.stopCamera();
+            dispose();
+        } catch (Exception e) {
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

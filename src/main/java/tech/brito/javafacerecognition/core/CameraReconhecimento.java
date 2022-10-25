@@ -24,7 +24,7 @@ public class CameraReconhecimento extends Camera {
         this.txfId = txfId;
         this.txfNome = txfNome;
         recognizer.read(caminhoArquivos + "\\classifierLBPH.yml");
-        recognizer.setThreshold(80);        
+        recognizer.setThreshold(80);
         usuario = new Usuario();
     }
 
@@ -46,7 +46,6 @@ public class CameraReconhecimento extends Camera {
     }
 
     private void updateForm() {
-
         if (Objects.isNull(usuario.getId())) {
             txfId.setText("");
         } else {

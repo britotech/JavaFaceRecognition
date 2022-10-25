@@ -54,7 +54,7 @@ public class CameraRegistro extends Camera {
             capturasRealizadas++;
             var cropped = String.format("%s/%d.%s.%d.jpg", caminhoArquivos, usuario.getId(), usuario.getNome(), capturasRealizadas);
             imwrite(cropped, faceCapturada);
-            lblContadorCapturas.setText(String.valueOf(capturasRealizadas) + "/25");
+            lblContadorCapturas.setText(String.valueOf(capturasRealizadas) + "/" + NUMERO_CAPTURAS);
         }
 
         validarTotalCapturas();
