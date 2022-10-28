@@ -1,7 +1,6 @@
 package tech.brito.javafacerecognition.forms;
 
 import tech.brito.javafacerecognition.core.CameraReconhecimento;
-import tech.brito.javafacerecognition.core.Utils;
 
 public class FrmReconhecimento extends javax.swing.JDialog {
 
@@ -9,7 +8,7 @@ public class FrmReconhecimento extends javax.swing.JDialog {
 
     public FrmReconhecimento(java.awt.Frame parent, boolean modal) {
         initComponents();
-        camera = new CameraReconhecimento(lblRegisterCam, Utils.getDiretorioImagens(), txfId, txfNome);
+        camera = new CameraReconhecimento(lblRegisterCam, txfId, txfNome);
         camera.startCamera();
     }
 

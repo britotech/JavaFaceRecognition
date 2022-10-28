@@ -19,11 +19,11 @@ public class CameraReconhecimento extends Camera {
     private final JTextField txfNome;
     private Usuario usuario;
 
-    public CameraReconhecimento(JLabel lblExibicaoCamera, String caminhoArquivos, JTextField txfId, JTextField txfNome) {
-        super(lblExibicaoCamera, caminhoArquivos);
+    public CameraReconhecimento(JLabel lblExibicaoCamera, JTextField txfId, JTextField txfNome) {
+        super(lblExibicaoCamera);
         this.txfId = txfId;
         this.txfNome = txfNome;
-        recognizer.read(caminhoArquivos + "\\classifierLBPH.yml");
+        recognizer.read(caminhoDiretorioImagens + "\\classifierLBPH.yml");
         recognizer.setThreshold(80);
         usuario = new Usuario();
     }

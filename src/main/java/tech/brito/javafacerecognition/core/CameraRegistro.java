@@ -19,16 +19,11 @@ public class CameraRegistro extends Camera {
     private JLabel lblContadorCapturas;
     private JDialog formulario;
     private Usuario usuario;
-    private int capturasRealizadas = 1;   
+    private int capturasRealizadas = 1;
 
-    public CameraRegistro(JLabel lblExibicaoCamera,
-            String caminhoArquivos,
-            JDialog formulario,
-            JButton btnRegister,
-            JTextField txfNome,
-            JLabel lblContadorCapturas) {
+    public CameraRegistro(JLabel lblExibicaoCamera, JDialog formulario, JButton btnRegister, JTextField txfNome, JLabel lblContadorCapturas) {
+        super(lblExibicaoCamera);
 
-        super(lblExibicaoCamera, caminhoArquivos);
         this.formulario = formulario;
         this.btnRegister = btnRegister;
         this.txfNome = txfNome;
@@ -52,7 +47,7 @@ public class CameraRegistro extends Camera {
 
         if (capturasRealizadas < NUMERO_CAPTURAS) {
             capturasRealizadas++;
-            var cropped = String.format("%s/%d.%s.%d.jpg", caminhoArquivos, usuario.getId(), usuario.getNome(), capturasRealizadas);
+            var cropped = String.format("%s/%d.%s.%d.jpg", caminhoDiretorioImagens, usuario.getId(), usuario.getNome(), capturasRealizadas);
             imwrite(cropped, faceCapturada);
             lblContadorCapturas.setText(String.valueOf(capturasRealizadas) + "/" + NUMERO_CAPTURAS);
         }

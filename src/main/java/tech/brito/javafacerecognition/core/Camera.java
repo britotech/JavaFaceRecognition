@@ -31,18 +31,18 @@ public abstract class Camera {
     private BytePointer mem = new BytePointer();
 
     protected Mat faceCapturada;
-    protected String caminhoArquivos;
+    protected String caminhoDiretorioImagens;
 
-    public Camera(JLabel lblExibicaoCamera, String caminhoArquivos) {
+    public Camera(JLabel lblExibicaoCamera) {
         this.lblExibicaoCamera = lblExibicaoCamera;
-        this.caminhoArquivos = caminhoArquivos;
-        this.cascade = new CascadeClassifier(caminhoArquivos + "/haarcascade_frontalface_alt.xml");
+        this.caminhoDiretorioImagens = Utils.getDiretorioImagens();
+        this.cascade = new CascadeClassifier(String.format("%s\\haarcascade_frontalface_alt.xml", Utils.getDiretorioResources()));
     }
 
     public abstract void executarOperacao(Rect dadosFace);
 
     public void redimensionarDemarcar(Rect dadosFace) {
-       // rectangle(cameraImage, dadosFace, new Scalar(0, 255, 0, 2), 3, 0, 0);
+        // rectangle(cameraImage, dadosFace, new Scalar(0, 255, 0, 2), 3, 0, 0);
         rectangle(cameraImage, dadosFace, new Scalar(0, 255, 0, 3), 3, 0, 0);
         faceCapturada = new Mat(imageGray, dadosFace);
         opencv_imgproc.resize(faceCapturada, faceCapturada, new Size(160, 160));
