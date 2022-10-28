@@ -8,7 +8,8 @@ Necessário ter um JDK 17 ou superior.
 
 IDE de sua preferência ( Foi utilizado Netbeans pela facilidade de utilização da criação dos recursos gráficos).
 
-Arquivo `haarcascade_frontalface_alt.xml` dentro do diretório de resources da aplicação. Já existe uma cópia no projeto.
+Arquivos `registroUsuarios.json` e `haarcascade_frontalface_alt.xml`  dentro do diretório de resources da aplicação.
+Esse arquivos serão utilizados para armazenamento dos usuários cadastrados e para o reconhecimento de faces. O Projeto já contém uma cópia dos arquivos.
 
 ## Execução
 Ao executar será apresentado o formulário principal onde você poderá estar
@@ -25,7 +26,7 @@ Para o registro é necessário inserir um nome e após a face ser reconhecida re
 
 As imagens salvas serão mantidas no diretório do projeto ex... `JavaFaceRecognition\src\main\resources\imagens`
 
-E será adicionado usuários em um Map em memória para reconhecimento.
+E será adicionado o usuário cadastrado no arquivo `registroUsuarios.json` para posterior reconhecimento.
 Após um usuário ser registrado será feito o treinamento e será gerado junto com as imagens
 um arquivo `classifierLBPH.yml`.
 
